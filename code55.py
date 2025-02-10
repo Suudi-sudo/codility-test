@@ -15,22 +15,22 @@
 
 
 def solution(S):
-    stack = []
+    roman = []
     
     for digit in S:
         num = int(digit)
         
        
-        while stack and stack[-1] + num <= 9:
-            num += stack.pop()
+        while roman and roman[-1] + num <= 9:
+            num += roman.pop()
         
-        stack.append(num)
+        roman.append(num)
     
-    return ''.join(map(str, stack))
+    return ''.join(map(str, roman))
 
 
 
 print(solution("32581"))   
-print(solution("1119812")) 
+print(solution("1119812"))  
 print(solution("226228"))  
 
